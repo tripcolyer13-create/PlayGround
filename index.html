@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#07141b" />
+  <title>WARD 13 — The Quiet Wing</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <canvas id="view" aria-label="First person view of an abandoned asylum"></canvas>
+    <div class="grain"></div><div class="vignette"></div>
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">✳</span><span>ST. AGNES <b>ASYLUM</b></span></div>
+      <div class="wing-label">NORTH WING <i></i> 02:17 AM</div>
+      <button id="soundBtn" class="sound-btn" aria-label="Toggle sound">♫ <span>SOUND ON</span></button>
+    </header>
+    <section class="hud">
+      <div class="objective-card">
+        <div class="eyebrow"><span class="pulse"></span> CURRENT OBJECTIVE</div>
+        <div id="objective">Find the three ward keys</div>
+        <div class="key-list"><span class="key-slot" id="key0">01</span><span class="key-slot" id="key1">02</span><span class="key-slot" id="key2">03</span><span class="key-caption">WARD KEYS</span></div>
+      </div>
+      <div class="status-card">
+        <div class="status-heading">VITAL SIGNS <span>● LIVE</span></div>
+        <div class="meter-label"><span>STAMINA</span><b id="staminaText">100%</b></div><div class="meter"><i id="staminaBar"></i></div>
+        <div class="meter-label battery-label"><span>FLASHLIGHT</span><b id="batteryText">86%</b></div><div class="meter battery"><i id="batteryBar"></i></div>
+      </div>
+    </section>
+    <div class="crosshair"><i></i><b></b></div>
+    <div class="prompt" id="prompt"></div>
+    <div class="whisper" id="whisper"></div>
+    <div class="bottom-hint"><span>WASD <i>MOVE</i></span><span>SHIFT <i>RUN</i></span><span>F <i>FLASHLIGHT</i></span><span>E <i>INTERACT</i></span></div>
+
+    <section class="screen visible" id="intro">
+      <div class="intro-card">
+        <div class="file-tag">CASE FILE <b>13—A</b><span>RESTRICTED</span></div>
+        <div class="intro-kicker">ST. AGNES · CLOSED 1987</div>
+        <h1>THE QUIET<br><em>WING</em></h1>
+        <p class="intro-copy">The power died at 2:17. The doors didn't.</p>
+        <div class="intro-rule"></div>
+        <p class="story">Three ward keys. One exit. Something else is still making rounds.</p>
+        <button id="startBtn" class="start-btn">ENTER THE ASYLUM <span>↗</span></button>
+        <div class="control-note">WASD to move <b>·</b> mouse to look <b>·</b> F flashlight <b>·</b> E interact</div>
+      </div>
+      <div class="intro-side"><span>FIELD RECORDING 01</span><p>“If the lights go out,<br>don't follow the footsteps.”</p><i>— NIGHT NURSE, 1974</i></div>
+    </section>
+    <section class="screen hidden" id="endScreen">
+      <div class="end-card"><div class="intro-kicker" id="endKicker">FIELD REPORT</div><h2 id="endTitle">YOU MADE IT OUT</h2><p id="endText"></p><button id="restartBtn" class="start-btn">TRY AGAIN <span>↻</span></button></div>
+    </section>
+    <div class="mobile-controls" id="mobileControls">
+      <div class="dpad"><button data-move="forward">▲</button><div><button data-move="left">◀</button><button data-move="back">▼</button><button data-move="right">▶</button></div></div>
+      <button id="mobileRun" class="mobile-action">RUN</button><button id="mobileInteract" class="mobile-action">USE</button>
+    </div>
+    <footer><span>ST. AGNES INPATIENT FACILITY</span><span>NO SIGNAL <b>✳</b></span><span>EST. 1908&nbsp; — &nbsp;WING C</span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
