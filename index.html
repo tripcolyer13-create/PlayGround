@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101522">
+  <title>Elsewhere — A dream in pieces</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell" aria-label="Elsewhere game">
+    <canvas id="game" aria-label="A dream-platform game. Use arrow keys or A and D to move, space or up to jump."></canvas>
+    <div class="topbar" id="topbar" hidden>
+      <div class="brand"><span class="brand-mark">✳</span> ELSEWHERE</div>
+      <div class="memory-meter" aria-live="polite"><span class="memory-icon">◇</span><span id="memory-count">0 / 6</span><span class="memory-label">MEMORIES</span></div>
+      <button class="icon-button" id="sound-button" aria-label="Toggle sound" title="Toggle sound">♫</button>
+      <button class="icon-button" id="pause-button" aria-label="Pause game" title="Pause">Ⅱ</button>
+    </div>
+    <section class="screen title-screen" id="title-screen">
+      <div class="eyebrow"><span></span> A SMALL GAME ABOUT HOLDING ON <span></span></div>
+      <h1>Elsewhere<span>.</span></h1>
+      <p class="subtitle">The world is only holding its breath.</p>
+      <p class="intro">You woke up somewhere familiar. The details are going first.<br>Gather what you remember, and find the way home.</p>
+      <button class="primary-button" id="start-button">STEP INTO THE DREAM <span>→</span></button>
+      <div class="control-hint"><kbd>←</kbd><kbd>→</kbd> move <span class="hint-divider">·</span> <kbd>SPACE</kbd> jump <span class="hint-divider">·</span> or touch controls</div>
+    </section>
+    <section class="screen pause-screen" id="pause-screen" hidden>
+      <div class="eyebrow"><span></span> THE DREAM IS WAITING <span></span></div>
+      <h2>Take a breath.</h2>
+      <button class="primary-button" id="resume-button">KEEP GOING <span>→</span></button>
+      <p class="small-hint">Press <kbd>ESC</kbd> to return</p>
+    </section>
+    <section class="screen end-screen" id="end-screen" hidden>
+      <div class="eyebrow"><span></span> SOME THINGS STAY <span></span></div>
+      <h2>You found your way.</h2>
+      <p class="intro">The dream quiets. Somewhere, morning begins.</p>
+      <button class="primary-button" id="again-button">WANDER AGAIN <span>↻</span></button>
+    </section>
+    <div class="touch-controls" id="touch-controls" aria-label="Touch controls">
+      <div class="move-pad"><button data-control="left" aria-label="Move left">←</button><button data-control="right" aria-label="Move right">→</button></div>
+      <button class="jump-button" data-control="jump" aria-label="Jump">↑</button>
+    </div>
+    <div class="toast" id="toast" aria-live="polite"></div>
+    <div class="bottom-note" id="bottom-note" hidden>THE DREAM IS COMING APART <span class="note-line"></span></div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
